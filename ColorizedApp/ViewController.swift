@@ -24,9 +24,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // setupColorView()
         // setValue(for: redLabel, greenLabel, blueLabel)
-        setupRedSlider()
-        setupGreenSlider()
-        setupBlueSlider()
+//        setupRedSlider()
+//        setupGreenSlider()
+//        setupBlueSlider()
+        
+        redSlider.minimumTrackTintColor = .red
+        greenSlider.minimumTrackTintColor = .green
         
         colorView.layer.cornerRadius = 10
         colorView.backgroundColor = UIColor(
@@ -94,7 +97,6 @@ class ViewController: UIViewController {
     
     private func setupBlueSlider() {
         blueSlider.value = 0.49
-        blueSlider.minimumTrackTintColor = .blue
         blueSlider.minimumValue = 0
         blueSlider.maximumValue = 255
     }
