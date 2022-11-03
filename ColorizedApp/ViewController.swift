@@ -22,26 +22,18 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // setupColorView()
-        // setValue(for: redLabel, greenLabel, blueLabel)
-//        setupRedSlider()
-//        setupGreenSlider()
-//        setupBlueSlider()
+        setupColorView()
+        setupRedSlider()
+        setupGreenSlider()
+        setupBlueSlider()
         
-        redSlider.minimumTrackTintColor = .red
-        greenSlider.minimumTrackTintColor = .green
         
-        colorView.layer.cornerRadius = 10
-        colorView.backgroundColor = UIColor(
-            red: CGFloat(redSlider.value),
-            green: CGFloat(greenSlider.value),
-            blue: CGFloat(blueSlider.value),
-            alpha: 1
-        )
+//        redLabel.text = String(format: "%.2f", redSlider.value)
+//        greenLabel.text = String(format: "%.2f", greenSlider.value)
+//        blueLabel.text = String(format: "%.2f", blueSlider.value)
         
-        redLabel.text = String(format: "%.2f", redSlider.value)
-        greenLabel.text = String(format: "%.2f", greenSlider.value)
-        blueLabel.text = String(format: "%.2f", blueSlider.value)
+        // setValue(for: redLabel, greenLabel, blueLabel) ВАРИАНТ РЕШЕНИЯ ОТ ЕВГЕНИЯ
+        
     }
     
     // MARK: - IBActions
@@ -57,7 +49,8 @@ class ViewController: UIViewController {
         greenLabel.text = String(format: "%.2f", greenSlider.value)
         blueLabel.text = String(format: "%.2f", blueSlider.value)
         
-        /* setupColorView()
+        /* ВАРИАНТ РЕШЕНИЯ ОТ ЕВГЕНИЯ
+         setupColorView()
          setValue(for: redLabel, greenLabel, blueLabel)
          switch sender {
          case redSlider:
@@ -73,36 +66,36 @@ class ViewController: UIViewController {
     // MARK: - Private Methods
     private func setupColorView() {
         colorView.layer.cornerRadius = 10
-        colorView.backgroundColor = UIColor(
-            red: CGFloat(redSlider.value),
-            green: CGFloat(greenSlider.value),
-            blue: CGFloat(blueSlider.value),
-            alpha: 1
-        )
+//        colorView.backgroundColor = UIColor(
+//            red: CGFloat(redSlider.value),
+//            green: CGFloat(greenSlider.value),
+//            blue: CGFloat(blueSlider.value),
+//            alpha: 1
+//        )
     }
     
     private func setupRedSlider() {
         redSlider.value = 0.05
         redSlider.minimumTrackTintColor = .red
         redSlider.minimumValue = 0
-        redSlider.maximumValue = 255
+        redSlider.maximumValue = 1
     }
     
     private func setupGreenSlider() {
         greenSlider.value = 0.27
         greenSlider.minimumTrackTintColor = .green
         greenSlider.minimumValue = 0
-        greenSlider.maximumValue = 255
+        greenSlider.maximumValue = 1
     }
     
     private func setupBlueSlider() {
         blueSlider.value = 0.49
         blueSlider.minimumValue = 0
-        blueSlider.maximumValue = 255
+        blueSlider.maximumValue = 1
     }
 }
 
-/*
+/* ВАРИАНТ РЕШЕНИЯ ОТ ЕВГЕНИЯ
  private func setValue(for labels: UILabel...) {
  labels.forEach { label in
  switch label {
